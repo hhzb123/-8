@@ -1,0 +1,95 @@
+#include<stdio.h>
+void Chinese(int a)
+{    if(a==0) printf("萩補秘籾朕方楚:");
+	if(a==1) printf("屎鳩基宛頁?");
+	if(a==2) printf("屎鳩:"); 
+	if(a==3) printf("危列:");
+} 
+void English(int a)
+{   if(a==0) printf("Please enter the number of questions:") ;
+	if(a==1) printf("The correct answer is:");
+	if(a==2) printf("right:");
+	if(a==3) printf("wrong:");
+}
+void German(int a)
+{  if(a==0) printf("Bitte geben Sie die Anzahl der Elemente:"); 
+	if(a==1) printf("Die richtige Antwort ist:");
+	if(a==2)printf("richtig:");
+	if(a==3) printf("Fehler:");
+}
+void French(int a)
+{if(a==0) printf("S'il vous pla?t entrez le nombre de sujets:") ;
+if(a==1) printf("La bonne r└ponse est");
+if(a==2) printf("correct:");
+if(a==3) printf("erreur:");
+}
+void Japanese(int a)
+{ if(a==0) printf("?朕の桑催を秘薦してください:");
+	if(a==1) printf("屎しい基えは肝のとおりです");
+	if(a==2) printf("屎しいです:");
+	if(a==3) printf("エラ`:");
+}
+void language(int c,int xuan)
+{
+	if(c==1) Chinese(xuan);
+	if(c==2) English(xuan);
+	if(c==3) German(xuan);
+	if(c==4) French(xuan);
+	if(c==5) Japanese(xuan);
+}
+void   generateExpression(int i1=0,int e1=0,int f1=0,int g1=0,int h1=0,int a1=0,int b1=0,int c1=0,int d1=0)
+{
+	if(i%11==1) 	 printf("%d/%d+%d/%d+%d/%d+%d/%d=",e,a,f,b,g,c,h,d);
+	if(i%11==2)   	printf("(%d+%d)/(%d-%d)*(%d-%d)=",a,b,c,d,e,f);
+	if(i%11==3)printf("%d/%d+%d/%d-%d/%d-%d/%d=",e,a,f,b,g,c,h,d);
+	if(i%11==4)printf("(%d+%d)/(%d-%d)*(%d+%d)=",a,b,c,d,e,f);
+	if(i%11==5)	 printf("%d/%d-%d/%d-%d/%d-%d/%d=",e,a,f,b,g,c,h,d);
+	if(i%11==6)  printf("(%d+%d)/(%d-%d)*%d*%d=",a,b,c,d,e,f);
+	if(i%11==7)printf("%d/%d*%d/%d+%d/%d+%d/%d-%d/%d=",k,l,e,a,f,b,g,c,h,d);
+	if(i%11==8)printf("(%d+%d)/(%d-%d)/(%d-%d)=",a,b,c,d,e,f);
+	if(i%11==9)  printf("%d/%d/%d/%d+%d/%d+%d/%d-%d/%d=",k,l,e,a,f,b,g,c,h,d);
+	if(i%11==10) printf("%d*%d*%d*%d*%d*%d=",a,b,c,d,e,f);
+	if(i%11==0)printf("(%d+%d)*(%d-%d)*(%d-%d)=",a,b,c,d,e,f);
+	 
+}
+
+int gongyue(int e,int f)
+  {int r;
+  	 if(e>=f)
+  r=e%f;
+ else
+ {r=e;
+ e=f;
+ f=r;
+ r=e%f;}
+ while(r!=0)
+ {e=f;f=r;r=e%f;}
+ return (f);
+  }  
+  int gongbei(int a,int b,int c,int d)
+{int max=a,sum=0,i,j;
+if(b>max) max=b;
+  if(c>max) max=c;
+    if(d>max) max=d;
+       for(i=2;;i++)
+       {
+       	sum=max%b+max%c+max%a+max%d;
+       	if(sum==0) break;
+       	else {
+       	sum=0;
+       	max=max*i;
+       }
+       }
+	return(max);
+}
+	   void print(int p=0,int sum1=0,int gb1=0,int zhengque1=0)
+{if(p==1) printf("%d\n",ce);
+else if(p==2) 	printf("%d/%d\n",sum,gb);
+else if(p==3)	 printf("%d\n",zhengque);
+}
+
+void scan(int a=0,int daan1=0,int fenzi1=0,int fenmu1=0)
+	{
+		if(a==1) scanf("%d",&daan);
+		if(a==2)  scanf("%d/%d",&fenzi,&fenmu);
+	}
